@@ -15,6 +15,7 @@ This project is a starter template for react.
 
 ```
 git clone https://Gyrados@bitbucket.org/spaceupcore/react-template.git
+cd react-template
 git remote set-url origin [url of new project]
 npm install
 npm run sass
