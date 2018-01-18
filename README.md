@@ -1,19 +1,25 @@
+# React Template
+
 This project is a starter template for react.
 
-Features:
-1. React router
-2. Redux
-3. Client API and notification middleware
-4. Notification library
-5. Spectre CSS framework
-6. Material icons
+## What does it do?
 
-Usage: 
+It creates a template which has all dependencies and project structure according to best practices of using react and redux. 
+It has a router for react configured with history and store object.
+It contains a client api middleware which handles the communication part with server.
+Notification middleware launches notifications whenever it is told to do so from server.
+This project uses Spectre as base css framework and material icons.
 
+
+## Usage: 
+
+```
 git clone https://Gyrados@bitbucket.org/spaceupcore/react-template.git
 git remote set-url origin [url of new project]
 npm install
 npm run sass
 npm start
+```
+
 
 
