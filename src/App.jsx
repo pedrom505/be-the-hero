@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Router, Route} from 'react-router-dom';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Notifications from 'react-notification-system-redux';
 import history from './history'
 
@@ -15,9 +15,9 @@ const NotificationContainer = connect(
 class App extends Component {
   render() {
     return (
-        <Router history={history}>
+      <Router history={history}>
         <div>
-          <NotificationContainer/>
+          <NotificationContainer />
         </div>
       </Router>
     );
