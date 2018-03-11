@@ -1,0 +1,138 @@
+.home-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #2bc0e4, #eaecc6);
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  overflow-y: auto;
+  .chips {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    .chip {
+      cursor: pointer;
+      display: inline-block;
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      height: 32px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 32px;
+      padding: 0 12px;
+      border-radius: 16px;
+      background-color: #e4e4e4;
+      margin-bottom: 5px;
+      margin-right: 5px;
+    }
+    .upvoted {
+      background-color: #ef5350;
+      color: white;
+    }
+    .chip:hover {
+      color: white;
+      background-color: #29b6f6;
+      transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    .upvoted:hover {
+      background-color: #ef5350;
+      color: white;
+    }
+    .no-hover:hover {
+      background-color: #e4e4e4;
+      color: rgba(0, 0, 0, 0.6);
+      cursor: default;
+    }
+    .user-chip {
+      display: inline-block;
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      height: 32px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 32px;
+      padding: 0 12px;
+      border-radius: 16px;
+      background-color: #e4e4e4;
+      margin-bottom: 5px;
+      margin-right: 5px;
+    }
+  }
+  .leaderboard {
+    height: fit-content;
+    background: white;
+    margin-top: 28px;
+    margin-bottom: 28px;
+    box-shadow: 4px 6px 20px -6px rgba(0, 0, 0, 1);
+    z-index: 1;
+    .card-title {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 0px !important;
+      padding: 12px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 48px;
+      justify-content: space-between;
+      @media (max-width: 767.98px) {
+        font-size: 26px;
+        margin-bottom: 18px;
+      }
+      .rounded-1 {
+        cursor: pointer;
+        height: 48px;
+        @media (max-width: 767.98px) {
+          margin-right: 13px;
+        }
+      }
+      .rounded-2 {
+        cursor: pointer;
+        height: 48px;
+        @media (max-width: 767.98px) {
+          margin-left: 13px;
+        }
+      }
+    }
+    .hr-line {
+      hr {
+        border-width: 2px;
+        background-color: #e53935;
+        width: 48%;
+        margin-bottom: 32px;
+        margin-top: -32px;
+        @media (max-width: 767.98px) {
+          width: 60%;
+        }
+      }
+    }
+    .ranking-cards {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      margin-bottom: 28px;
+      .user-card {
+        padding-left: 12px;
+        padding-right: 12px;
+        @media (max-width: 767.98px) {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+        .power-points {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-size: 24px;
+          @media (max-width: 767.98px) {
+            font-size: 20px;
+          }
+          .hero-name {
+            font-size: 24px;
+            @media (max-width: 767.98px) {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,13 +5,11 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-notification-system": "^0.2.16",
-    "react-notification-system-redux": "^1.2.0",
-    "react-redux": "^5.0.6",
+    "react-notification-system": "^0.2.17",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17",
-    "redux": "^3.7.2"
+    "react-scripts": "1.0.17"
   },
+  "homepage": "http://localhost:8090/heroes",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -19,7 +17,5 @@
     "eject": "react-scripts eject",
     "sass": "sass --watch src/scss/app.scss:src/css/app.css --style compressed"
   },
-  "devDependencies": {
-    "redux-devtools-extension": "^2.13.2"
-  }
+  "devDependencies": {}
 }
