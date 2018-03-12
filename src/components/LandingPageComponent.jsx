@@ -1,9 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import history from '../history'
 
 class LandingPageComponent extends React.Component {
   constructor(props) {
     super(props)
+  }
+
+  componentDidMount() {
+    if (document.cookie.length > 0) {
+      history.push('/home')
+    }
   }
 
   render() {
