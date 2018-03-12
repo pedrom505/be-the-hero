@@ -14,7 +14,7 @@ class LandingPageComponent extends React.Component {
           <div className="log-in">
             <p>Already a Hero?</p>
             <div className="div-btn">
-              <Link className="btn btn-dark" to='/heroes/login'>Let's Fight</Link>
+              <Link className="btn btn-dark" to='/login'>Let's Fight</Link>
             </div>
           </div>
           <div className="hr-line">
@@ -23,7 +23,7 @@ class LandingPageComponent extends React.Component {
           <div className="sign-up">
             <p>Create your own Hero!</p>
             <div className="div-btn">
-              <Link className="btn btn-dark" to='/heroes/signup'>Join the league</Link>
+              <Link className="btn btn-dark" to='/signup'>Join the league</Link>
             </div>
           </div>
         </div>

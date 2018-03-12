@@ -14,10 +14,10 @@ class App extends Component {
     return (
       <Router history={history}>
         <div>
-          <Route exact={true} path="/heroes" component={LandingPageComponent}></Route>
-          <Route exact={true} path="/heroes/login" component={LoginComponent}></Route>
-          <Route exact={true} path="/heroes/signup" component={SignUpComponent}></Route>
-          <Route exact={true} path="/heroes/home" component={HomeComponent}></Route>
+          <Route exact={true} path="/" component={LandingPageComponent}></Route>
+          <Route exact={true} path="/login" component={LoginComponent}></Route>
+          <Route exact={true} path="/signup" component={SignUpComponent}></Route>
+          <Route exact={true} path="/home" component={HomeComponent}></Route>
         </div>
       </Router>
     );

@@ -41,7 +41,7 @@ class LoginComponent extends React.Component {
       this.setState({ secretCode: Object.assign({}, this.state.secretCode, { isDirty: true }) })
       return
     }
-    fetch('/v1/login', {
+    fetch('v1/login', {
       method: 'POST',
       body: JSON.stringify({ account: this.state.heroName.value, pass: this.state.secretCode.value }),
       credentials: "same-origin"
@@ -56,7 +56,7 @@ class LoginComponent extends React.Component {
         })
         return
       }
-      history.push('/heroes/home')
+      history.push('/home')
     }).catch(exception => {
       console.log('Error', exception);
     })

@@ -36,7 +36,7 @@ class SignupComponent extends React.Component {
 
   // Handle add power
   handleAddPower = (e) => {
-    if (e.key === 'Enter' && this.state.powers.length < 4) {
+    if (e.key === 'Enter' && this.state.powers.length < 4 && this.state.superPowers.value.length > 0) {
       this.setState({ powers: [...this.state.powers, this.state.superPowers.value], superPowers: Object.assign({}, this.state.superPowers, { value: '' }) })
     }
   }
@@ -59,9 +59,10 @@ class SignupComponent extends React.Component {
       this.setState({ secretCode: Object.assign({}, this.state.secretCode, { isDirty: true }) })
       return
     }
-    fetch('http://localhost/v1/signup', {
+    fetch('/v1/signup', {
       method: 'POST',
       body: JSON.stringify({ account: this.state.heroName.value, pass: this.state.secretCode.value, powers: this.state.powers }),
+      credentials: "same-origin"
     }).then(response => {
       return response.json()
     }).then(data => {
@@ -73,7 +74,8 @@ class SignupComponent extends React.Component {
         })
         return
       }
-      history.push('/heroes/home')
+      history.push('/home')
+      
     }).catch(exception => {
       console.log('Error', exception);
     })

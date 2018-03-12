@@ -110,7 +110,7 @@ class HomeComponent extends React.Component {
       document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
     }
 
-    history.replace('/heroes')
+    history.replace('/')
   }
   render() {
     return (
