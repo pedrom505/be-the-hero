@@ -33,33 +33,35 @@ class HomeComponent extends React.Component {
       method: 'GET',
       credentials: "same-origin"
     }).then((response) => {
-      return response.json()
-    }).then((data) => {
-      if (!data.ack) {
-        this.notificationSystem.addNotification({
-          title: 'Error',
-          message: data.error,
-          level: 'error'
-        })
-        return
-      }
-      const byHeroes = groupBy(data.heroes, 'account')
-      let heroes = []
-      for (var key in byHeroes) {
-        if (byHeroes.hasOwnProperty(key)) {
-          heroes.push({
-            account: key,
-            powers: byHeroes[key].map(obj => {
-              return {
-                power: obj.power,
-                upvoted: data.upvotes.find(item => item.account === key && item.power === obj.power) ? true : false
-              }
-            }),
-            upvotes: byHeroes[key].reduce((prev, curr) => { return prev + curr.sum }, 0)
+      response.json().then(data => {
+        if (response.status >= 400) {
+          this.notificationSystem.addNotification({
+            title: 'Error',
+            message: data.error,
+            level: 'error'
           })
+          return
         }
-      }
-      this.setState({ account: data.account, powers: data.powers, upvotedByMe: data.upvotes, heroes: heroes.filter(obj => obj.account !== data.account) })
+        const byHeroes = groupBy(data.heroes, 'account')
+        let heroes = []
+        for (var key in byHeroes) {
+          if (byHeroes.hasOwnProperty(key)) {
+            heroes.push({
+              account: key,
+              powers: byHeroes[key].map(obj => {
+                return {
+                  power: obj.power,
+                  upvoted: data.upvotes.find(item => item.account === key && item.power === obj.power) ? true : false
+                }
+              }),
+              upvotes: byHeroes[key].reduce((prev, curr) => { return prev + curr.sum }, 0)
+            })
+          }
+        }
+        this.setState({ account: data.account, powers: data.powers, upvotedByMe: data.upvotes, heroes: heroes.filter(obj => obj.account !== data.account) })
+      }).catch(exception => {
+        console.log('Error', exception);
+      })
     }).catch(exception => {
       console.log('Error', exception);
     })
@@ -81,18 +83,21 @@ class HomeComponent extends React.Component {
           body: JSON.stringify({}),
           credentials: "same-origin"
         }).then((response) => {
-          return response.json()
-        }).then((data) => {
-          if (!data.ack) {
-            this.notificationSystem.addNotification({
-              title: 'Error',
-              message: data.error,
-              level: 'error'
-            })
-            heroes[index].powers[subIndex].upvoted = upvoted
-            heroes[index].upvotes = upvoted ? (heroes[index].upvotes + 1) : (heroes[index].upvotes - 1)
-            this.setState({ heroes: heroes })
-          }
+          response.json().then(data => {
+            if (response.status >= 400) {
+              this.notificationSystem.addNotification({
+                title: 'Error',
+                message: data.error,
+                level: 'error'
+              })
+              heroes[index].powers[subIndex].upvoted = upvoted
+              heroes[index].upvotes = upvoted ? (heroes[index].upvotes + 1) : (heroes[index].upvotes - 1)
+              this.setState({ heroes: heroes })
+              return
+            }
+          }).catch(exception => {
+            console.log('Error', exception);
+          })
         }).catch(exception => {
           console.log('Error', exception);
         })

@@ -46,17 +46,19 @@ class LoginComponent extends React.Component {
       body: JSON.stringify({ account: this.state.heroName.value, pass: this.state.secretCode.value }),
       credentials: "same-origin"
     }).then(response => {
-      return response.json()
-    }).then(data => {
-      if (!data.ack) {
-        this.notificationSystem.addNotification({
-          title: 'Error',
-          message: data.error,
-          level: 'error'
-        })
-        return
-      }
-      history.push('/home')
+      response.json().then(data => {
+        if (response.status >= 400) {
+          this.notificationSystem.addNotification({
+            title: 'Error',
+            message: data.error,
+            level: 'error'
+          })
+          return
+        }
+        history.push('/home')
+      }).catch(exception => {
+        console.log('Error', exception);
+      })
     }).catch(exception => {
       console.log('Error', exception);
     })
