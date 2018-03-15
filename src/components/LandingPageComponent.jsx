@@ -7,11 +7,11 @@ class LandingPageComponent extends React.Component {
     super(props)
   }
 
-  componentDidMount() {
-    if (document.cookie.length > 0) {
-      history.push('/home')
-    }
-  }
+  // componentDidMount() {
+  //   if (document.cookie.length > 0) {
+  //     history.push('/home')
+  //   }
+  // }
 
   render() {
     return (
