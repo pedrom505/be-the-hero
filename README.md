@@ -1,4 +1,4 @@
-# Be The Hero
+# #BeTheHero
 This project is the frontend of the **"Be The Hero App"** which aims at demonstrating the capabilities of [Space IDE](https://spaceuptech.com/space-ide).
 
 ## The Features:
