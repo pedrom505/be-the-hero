@@ -1,24 +1,22 @@
-# React Template
+# Be The Hero
+This project is the frontend of the **"Be The Hero App"** which aims at demonstrating the capabilities of [Space IDE](https://spaceuptech.com/space-ide).
 
-This project is a starter template for react.
+## The Features:
 
-## What does it do?
+- Sign Up page to create your own hero with super powers.  
+- Login Page to explore the heroes universe and show your support.  
+- The Heroes Leaderboard to check out other heroes and their super powers.  
+- Upvote the powers you love the most.
 
-- It creates a template which has all dependencies and project structure according to best practices of using react and redux.  
-- It has a router for react configured with history and store object.  
-- It contains a client api middleware which handles the communication part with server.  
-- Notification middleware launches notifications whenever it is told to do so from server.  
-- This project uses Spectre as base css framework and material icons.  
-
+## Tutorial:
+To learn more on how to get started building your own platform, check out this [tutorial](https://spaceuptech.com/getting-started).
 
 ## Usage: 
 
 ```
-git clone https://Gyrados@bitbucket.org/spaceupcore/react-template.git
-cd react-template
-git remote set-url origin [url of new project]
+git clone https://github.com/spaceuptech/be-the-hero.git
+cd be-the-hero
 npm install
-npm run sass
 npm start
 ```
 
