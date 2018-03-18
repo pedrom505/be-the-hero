@@ -9,7 +9,7 @@ This project is the frontend of the **"Be The Hero App"** which aims at demonstr
 - Upvote the powers you love the most.
 
 ## Tutorial:
-To learn more on how to get started building your own platform, check out this [tutorial](https://spaceuptech.com/getting-started).
+To learn more on how to get started building your own platform, check out this [tutorial](https://spaceuptech.com/get-started).
 
 ## Usage: 
 
